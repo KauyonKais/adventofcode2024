@@ -1,15 +1,16 @@
-﻿namespace AdventOfCode;
+﻿using System.Collections;
+using AdventOfCode;
 
-class D1P1 : IAdventOfCodeTask
+class D1P2 : IAdventOfCodeTask
 {
-    public string Execute(){
+    public string Execute()
+    {
         const string seperator = "   ";
         var difference = 0;
 
-        var input = File.ReadAllText("C:\\Users\\kauyo\\RiderProjects\\adventofcode2024\\AdventOfCode\\Data\\D1P1.txt");
+        var input = File.ReadAllText("C:\\Users\\kauyo\\RiderProjects\\adventofcode2024\\AdventOfCode\\Data\\D1P2.txt");
 
         List<int> list1 = [];
-
         List<int> list2 = [];
         foreach (var line in input.Split("\n"))
         {
@@ -19,16 +20,12 @@ class D1P1 : IAdventOfCodeTask
             list2.Add(int.Parse(parts[1]));
         }
 
-        list1.Sort();
-        list2.Sort();
-        for (var i = 0; i<list1.Count;
-             i++)
+        foreach (var line in list1)
         {
-            var lineDiff = Math.Abs(list1[i] - list2[i]);
-            difference += lineDiff;
+            var count = list2.Count(line2 => line == line2);
+            difference += count * line; 
         }
 
         return difference.ToString();
     }
-
 }
