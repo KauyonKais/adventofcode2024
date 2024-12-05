@@ -7,6 +7,9 @@ switch (taskToRun)
 {
     case "D1P1": result = new D1P1().Execute(); break;
     case "D1P2": result = new D1P2().Execute(); break;
+    case "D2P1": result = new D2P1().Execute(); break;
+    case "D2P2": result = new D2P2().Execute(); break;
+    case "D3P1": result = new D3P1().Execute(); break;
 }
 
 Console.WriteLine(result);
