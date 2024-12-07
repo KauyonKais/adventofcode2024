@@ -13,6 +13,8 @@ switch (taskToRun)
     case "D3P2": result = new D3P2().Execute(); break;
     case "D4P1": result = new D4P1().Execute(); break;
     case "D4P2": result = new D4P2().Execute(); break;
+    case "D5P1": result = new D5P1().Execute(); break;
+    case "D5P2": result = new D5P2().Execute(); break;
 	default: result = "Not found."; break;
 }
 
